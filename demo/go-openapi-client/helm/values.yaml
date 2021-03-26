@@ -10,7 +10,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: v1
 
-targetHost: go-openapi-v1
+targetHost: go-openapi-v1:8080
 
 imagePullSecrets: []
 nameOverride: ""
