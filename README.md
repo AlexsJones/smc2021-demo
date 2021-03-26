@@ -1,4 +1,4 @@
-## Traffic splitting demo 😅
+## Linkerd traffic splitting 🧙🏼
 
 This demonstrates Linkerd's traffic splitting with real code.
 
