@@ -1,0 +1,12 @@
+apiVersion: split.smi-spec.io/v1alpha1
+kind: TrafficSplit
+metadata:
+  name: go-openapi-split
+  namespace: apps
+spec:
+  service: go-openapi-v1
+  backends:
+  - service: go-openapi-v1
+    weight: 500m
+  - service: go-openapi-v2
+    weight: 500m
