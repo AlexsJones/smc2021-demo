@@ -49,9 +49,6 @@ go-openapi-v3-7d4dfcd8d4-fq7vd       2/2     Running   0          115s
 Apply the traffic split `kubectl apply -f demo/traffic-split.yaml` 💅
 
 
-![image1](images/split1.png)
-
-
 #### Code differences with go-openapi-v2
 
 The V2 API decided all users need to state their food preferences for the international buffet. 🥝🫑🌶🥒🥬
