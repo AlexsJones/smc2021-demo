@@ -7,7 +7,7 @@ work(){
     docker push tibbar/go-openapi:$VERSION
     popd
 }
-declare -a arr=("v1" "v2")
+declare -a arr=("v1" "v2" "v3")
 for i in "${arr[@]}"
 do
     VERSION=$i

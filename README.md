@@ -2,11 +2,24 @@
 
 This demonstrates Linkerd's traffic splitting with real code.
 
-- This code deploys 2 Apps with 1 client
+- This code deploys 3 Apps with 1 client
 - `go-open-api-v2` will start rejecting the client creation calls as it has a change in it's spec.
+
+This example deploys three backends that all operate slightly differently.
+We can deploy traffic split to measure their performance...
+
+![images](images/go-openapi.png)
 
 
 ![images](images/splitting.png)
+
+As seen here...
+
+![images](images/split1.png)
+
+And now we see our split traffic ✨
+
+![images](images/split2.png)
 
 
 ### Setup
@@ -26,20 +39,17 @@ cd demo
 ```
 ❯ k get pods -n apps
 NAME                                 READY   STATUS    RESTARTS   AGE
-go-openapi-client-668b94dbf4-cwbsp   2/2     Running   0          35s
-go-openapi-v1-549c9cb676-spzsb       2/2     Running   0          35s
-go-openapi-v2-7bb874cf5b-c7mg2       2/2     Running   0          35s
+go-openapi-client-668b94dbf4-wp46d   2/2     Running   0          2m24s
+go-openapi-v1-549c9cb676-kj7z7       2/2     Running   0          2m34s
+go-openapi-v2-7bb874cf5b-qbtpf       2/2     Running   0          2m30s
+go-openapi-v3-7d4dfcd8d4-fq7vd       2/2     Running   0          115s
 ```
 
 
 Apply the traffic split `kubectl apply -f demo/traffic-split.yaml`
 
-```
-❯ linkerd -n apps viz routes deploy/go-openapi-v2
-ROUTE             SERVICE   SUCCESS      RPS   LATENCY_P50   LATENCY_P95   LATENCY_P99
-[DEFAULT]   go-openapi-v1   100.00%   0.0rps           1ms           9ms          10ms
-[DEFAULT]   go-openapi-v2         -        -             -             -             -`
-```
+
+![image1](images/split1.png)
 
 
 #### Code differences with go-openapi-v2
@@ -99,3 +109,7 @@ See that a bunch of stuff is erroring out due to missing field on the User objec
 │ go-openapi-client &{sofiajones246@example.net Benjamin Thompson <nil> 0 White Slicerweak +963 717 1 6 124055 0 Shirttranslucent}                                                    │
 │ go-openapi-client &{zoeywilson061@example.com Mia Williams <nil> 0 Miller Whaleolive +218 53 81547153 6 0 Princessbog}
 ```
+
+#### Code differences with go-openapi-v3
+
+This backend introduces heavy latency
