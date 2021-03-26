@@ -1,4 +1,4 @@
-## Traffic splitting demo
+## Traffic splitting demo 😅
 
 This demonstrates Linkerd's traffic splitting with real code.
 
@@ -22,7 +22,7 @@ And now we see our split traffic ✨
 ![images](images/split2.png)
 
 
-### Setup
+### Setup 🙋
 
 
 - `kind create cluster --image rossgeorgiev/kind-node-arm64:v1.20.0`
@@ -46,7 +46,7 @@ go-openapi-v3-7d4dfcd8d4-fq7vd       2/2     Running   0          115s
 ```
 
 
-Apply the traffic split `kubectl apply -f demo/traffic-split.yaml`
+Apply the traffic split `kubectl apply -f demo/traffic-split.yaml` 💅
 
 
 ![image1](images/split1.png)
@@ -54,7 +54,7 @@ Apply the traffic split `kubectl apply -f demo/traffic-split.yaml`
 
 #### Code differences with go-openapi-v2
 
-The V2 API decided all users need to state their food preferences for the international buffet.
+The V2 API decided all users need to state their food preferences for the international buffet. 🥝🫑🌶🥒🥬
 
 ```
 #go-openapi-v2
@@ -84,9 +84,9 @@ curl -X POST "http://localhost:8080/v2/user" -H  "accept: application/xml" -H  "
 {"code":602,"message":"foodPreference in body is required"}%
 ```
 
-Bummer!
+Bummer! 🙅🏽
 
-See that a bunch of stuff is erroring out due to missing field on the User object yay, it works!
+See that a bunch of stuff is erroring out due to missing field on the User object yay, it works! 👍
 
 
 ```
