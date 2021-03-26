@@ -1,4 +1,4 @@
-## Traffic splitting demo 😅
+## Linkerd traffic splitting 🧙🏼
 
 This demonstrates Linkerd's traffic splitting with real code.
 
@@ -47,9 +47,6 @@ go-openapi-v3-7d4dfcd8d4-fq7vd       2/2     Running   0          115s
 
 
 Apply the traffic split `kubectl apply -f demo/traffic-split.yaml` 💅
-
-
-![image1](images/split1.png)
 
 
 #### Code differences with go-openapi-v2
